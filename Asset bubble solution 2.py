@@ -1,7 +1,3 @@
-# from google.colab import drive (change)
-# drive.mount('/content/drive')  (change)
-
-# Importing required Libraries
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -16,7 +12,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-df=pd.read_csv('NFLX.csv')
+df=pd.read_csv(r'C:\Users\Asus\Downloads\NFLX.csv')
 
 df.isna().any()
 
@@ -139,6 +135,8 @@ real_data = [model_inputs[len(model_inputs)+1-prediction_days:len(model_inputs+1
 real_data = np.array(real_data)
 real_data = np.reshape(real_data,(real_data.shape[0],real_data.shape[1],1))
 print(real_data.shape)
+
+
 
 prediction = model.predict(real_data)
 prediction = scaler.inverse_transform(prediction)
